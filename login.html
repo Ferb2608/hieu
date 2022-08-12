@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./asserts/css/style login.css">
+</head>
+<body>
+    <div class="login">
+        <form action="" class="login__form" id="form__1">
+                <header class="login__form-header">
+                    Please Sign In
+                </header>
+            <div class="login__form-input">
+                <input id="Email" class="login__form-input-item" type="text" placeholder="E-mail">
+                <span class="form-message"></span>
+            </div>
+            <div class="login__form-input">
+                <input id="Password" class="login__form-input-item" type="password" placeholder="Password">
+                <span class="form-message"></span>
+            </div>
+            <div class="login__form-checkbox">
+                <input type="checkbox"> Remember Me
+            </div>
+            <div class="login__form-btn">
+                <button type="button" class="login__form-btn-login">Login</button>
+            </div>
+            <div class="login__form-checkRegiter">
+                <a href="http://127.0.0.1:5500/Register.html" class="login__form-link">Click here to Register</a>
+            </div>
+        </form>
+    </div>
+    <script src="./validator.js"></script>
+    <script>
+        Validator({
+            form: '#form__1',
+            errorSelector: '.form-message',
+            rules: [
+                Validator.isEmail('#Email'),
+                Validator.maxLength('#Email',50),
+                Validator.isRequired('#Password'),
+                Validator.maxLength('#Password',50)
+                ]
+        });
+    </script>
+</body>
+</html>
